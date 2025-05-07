@@ -144,7 +144,7 @@ body {
     border-radius: 8px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    box-shadow: 5px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     gap: 25px;
     align-items: flex-start;
