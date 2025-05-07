@@ -108,7 +108,7 @@ body {
     margin-bottom: 30px;
   }
   .profile img {
-    width: 200px;
+    width: 160px;
     height: auto;
     border: 1px solid #ccc;
     margin-right: 20px;
@@ -125,29 +125,92 @@ body {
     line-height: 1.6;
   }
   
-  /* PhD Students Grid */
-  .grid {
+  /* M.S. Students Grid */
+  :root {
+    --primary-color: #3498db;
+    --text-color: #2c3e50;
+    --divider-color: #c6ebf5;
+  }
+  /* 双列容器 */
+  .members-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .member-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
+    align-items: flex-start;
   }
-  .grid .member {
-    width: calc(20% - 20px);
-    text-align: center;
+  /* 头像样式 */
+  .avatar {
+    width: 150px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 0%;
+    overflow: hidden;
+    border: 0px solid var(--primary-color);
   }
-  .grid .member img {
+  .avatar img {
     width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
   }
-  .grid .member .name {
-    margin-top: 8px;
-    font-weight: bold;
+  /* 内容区域 */
+  .content {
+    flex: 1;
   }
-  .grid .member .email {
-    font-size: 14px;
-    color: #555;
+  .name {
+    color: var(--text-color);
+    font-size: 1.6em;
+    margin: 0 0 15px;
+    font-weight: 600;
+  }
+  .divider {
+    height: 2px;
+    background: var(--divider-color);
+    margin: 18px 0;
+    position: relative;
+  }
+  .divider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+  }
+  .info {
+    color: #666;
+    line-height: 1.8;
+    font-size: 0.95em;
+  }
+  .info p {
+    margin: 12px 0;
+  }
+  /* 响应式设计 */
+  @media (max-width: 768px) {
+    .member-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    .divider::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
   }
   
   /* Footer */
@@ -155,5 +218,10 @@ body {
     text-align: center;
     padding: 10px 0;
     border-top: 1px solid #ddd;
+  }
+
+  /* text format setting */
+  .email-font-size-setting {
+    font-size: 12px;
   }
   

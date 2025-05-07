@@ -6,7 +6,62 @@
   <title>Intelligent Control and Robotics (ICR)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <style>
+    .infographic {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px; /* 项目间距 */
+    }
+    
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .item img {
+      width: auto;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    
+    .item div {
+      font-size: 1.1em;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .apps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .item img {
+        height: 180px;
+      }
+    }
+  </style>
 
   <!-- 页眉 -->
   <header>
@@ -23,6 +78,7 @@
           <li class="active"><a href="index.html">主页</a></li>
           <li class="active"><a href="ResearchResults.html">研究成果</a></li>
           <li class="active"><a href="MembersOfLab.html">实验室成员</a></li>
+          <li class="active"><a href="other.html">其他</a></li>
         </ul>
       </nav>
     </div>
@@ -41,69 +97,38 @@
     <!-- 研究方向 -->
     <section id="research">
       <h2>实验室研究方向</h2>
+      <ul>
+        <li>机器人智能控制与决策</li>
+        <li>飞行器集群协同控制与决策</li>
+        <li>故障诊断，容错控制与优化</li>
+        <li>网络攻击下的智能安全控制</li>
+        <li>卫星动力学控制</li>
+      </ul>
+
       <div class="infographic">
-        <!-- 应用 -->
         <div class="apps">
           <div class="item">
-            <img src="images/app1.png" alt="无人驾驶" />
-            <div>无人驾驶</div>
+            <img src="pic/spaceRobot.jpg" alt="无人驾驶" />
+            <div>空间机器人自主控制</div>
           </div>
           <div class="item">
-            <img src="images/app2.png" alt="生活服务" />
-            <div>生活服务</div>
+            <img src="pic/uav.jpg" alt="人机交互" />
+            <div>飞行器规划控制</div>
           </div>
           <div class="item">
-            <img src="images/app3.png" alt="人机交互" />
-            <div>人机交互</div>
-          </div>
-          <div class="item">
-            <img src="images/app4.png" alt="医疗服务" />
-            <div>医疗服务</div>
-          </div>
-          <div class="item">
-            <img src="images/app5.png" alt="国防军事" />
-            <div>国防军事</div>
-          </div>
-          <div class="item">
-            <img src="images/app6.png" alt="科学考察" />
-            <div>科学考察</div>
-          </div>
-        </div>
-
-        <!-- 中心齿轮与科学问题 -->
-        <div class="center">
-          <img src="images/gear-diagram.png" alt="智能机器人齿轮示意图" style="max-width:300px;" />
-          <div class="science-problems">
-            <div>自主感知</div>
-            <div>自主决策</div>
-            <div>自主学习</div>
-            <div>自主控制</div>
-          </div>
-        </div>
-
-        <!-- 方法 -->
-        <div class="methods">
-          <div class="item">
-            <img src="images/method1.png" alt="Nonlinear Control" />
-            <div>Nonlinear Control</div>
-          </div>
-          <div class="item">
-            <img src="images/method2.png" alt="Reinforcement Learning" />
-            <div>Reinforcement Learning</div>
-          </div>
-          <div class="item">
-            <img src="images/method3.png" alt="Formal methods" />
-            <div>Formal methods</div>
-          </div>
-          <div class="item">
-            <img src="images/method4.png" alt="Optimization" />
-            <div>Optimization</div>
-          </div>
-          <div class="item">
-            <div style="font-size:24px; line-height:1;">……</div>
+            <img src="pic/jqr.jpg" alt="医疗服务" />
+            <div>机械臂</div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- 招生 -->
+    <section id="招生" class="positions">
+      <h2>招生</h2>
+      <ul>
+        <li>每年招收硕士研究生2人，欢迎自动化、计算机、人工智能、应用数学等相关专业的同学加入，实验室团队氛围好。学习认真、态度踏实、数学好，英语好，动手实践能力强的同学将优先考虑。有意躺平/划水的同学请谨慎联系。</li>
+      </ul>
     </section>
 
     <!-- 学术任职 -->
@@ -114,14 +139,13 @@
         <li>IEEE Transactions on Neural Networks and Learning Systems 编委 (Associate Editor)</li>
         <li>IEEE 控制系统协会会议编委会编委</li>
         <li>IEEE ACC、IEEE CDC、IEEE ICRA 等自动化控制与机器人领域国际会议编委</li>
-        <!-- …如需更多条目，可继续添加 -->
       </ul>
     </section>
   </main>
 
-  <!-- 页脚（可选） -->
-  <footer style="text-align:center; padding:10px 0; border-top:1px solid #ddd;">
-    &copy; 2025 Intelligent Control and Robotics (ICR)
+  <!-- 页脚 -->
+  <footer style="text-align:center; padding:12px 0; border-top:1px solid #d6d6fa;">
+    &copy; 2025 Intelligence Aeronautics and Astronautics Lab (IAALab)
   </footer>
 
 </body>
