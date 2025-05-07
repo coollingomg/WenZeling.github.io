@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Intelligent Control and Robotics (ICR)</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        details {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+        }
+        summary {
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        summary::-webkit-details-marker { display: none; }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details ol li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        
+        /* 1. 给 this-table 重置计数器 */
+        .auto-counter {
+            counter-reset: rowNumber;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        /* 2. 每一行进位一次 */
+        .auto-counter tbody tr {
+            counter-increment: rowNumber;
+        }
+        /* 3. 在 class="counter" 的单元格前插入计数器值 */
+        .auto-counter td.counter::before {
+            content: counter(rowNumber);
+            display: inline-block;
+            width: 1.5em;
+            text-align: right;
+            margin-right: 0.5em;
+        }
+
+        /* 表格单元格样式 */
+        .auto-counter th,
+        .auto-counter td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #ffffff;
+        vertical-align: top;
+        text-align: left;
+        }
+        .auto-counter th {
+            background: #fffefe;
+        }
+    
+        /* 表头样式 */
+        .auto-counter thead th {
+        background-color: #d7e5ef;
+        font-weight: bold;
+        border-bottom: 2px solid #110505;
+        }
+
+        /* 鼠标悬停高亮行 */
+        .auto-counter tbody tr:hover {
+        background-color: #4ca6f5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页眉 -->
+    <header>
+        <div class="container">
+            <div class="logo">
+            <img src="pic/scu_logo.png" alt="scu_logo" />
+        </div>
+        <div class="logo">
+            <img src="pic/scuaa_logo.webp" alt="scuaa_logo" />
+        </div>
+        <h1>Intelligence Aeronautics and Astronautics Lab (IAALab)</h1>
+        <nav>
+        <ul>
+            <li class="active"><a href="index.html">主页</a></li>
+            <li class="active"><a href="ResearchResults.html">研究成果</a></li>
+            <li class="active"><a href="MembersOfLab.html">实验室成员</a></li>
+        </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 期刊论文 -->
+        <details open>
+        <summary>期刊论文 (Journal Papers)</summary>
+        <ol>
+            <li>B. Li, Y. Wang, Kai Zhang, G. R. Duan. "Constrained feedback control for spacecraft reorientation with an optimal gain," <i>IEEE Transactions on Aerospace and Electronic Systems</i>, 57(6): 3916-3926. (2021)</li>
+            <li>S. Wang, L. Ma, B. Li, Kai Zhang. Architecture Design and Flight Control of a Novel Octopus Shaped Multirotor Vehicle. <i>IEEE Robotics and Automation Letters</i>, 7(1): 311-317. (2021)</li>
+            <li>Kai Zhang, G. R. Duan. "Passivity-based adaptive tracking control of spacecraft line-of-sight relative motion with thrust saturation," <i>Journal of the Franklin Institute</i>, 358(13): 6408-6432. (2021)</li>
+            <li>Zhaoke Ning, Tong Wang, Xiaona Song, Jinyong Yu. "Fault detection of nonlinear stochastic systems via a dynamic event-triggered strategy," <i>Signal Processing</i>, 167. (2020)</li>
+            <li>Kai Zhang, G. R. Duan. "Output-feedback super-twisting control for line-of-sight angles tracking of non-cooperative target spacecraft," <i>ISA Transactions</i>, 94: 17-27. (2019)</li>
+            <li>Kai Zhang , G. R. Duan, M. D. Ma. "Dynamic output feedback sliding mode control for spacecraft hovering without velocity measurements," <i>Journal of the Franklin Institute</i>, 356(4): 1991-2014. (2019)</li>
+            <li>Zhaoke Ning, Jinyong Yu, Tong Wang. "Event-triggered fault detection filter design for uncertain stochastic network system with package dropouts," <i>Proceedings of the Institution of Mechanical Engineers. Part I: Journal of Systems and Control Engineering</i>, 233(10), 1351-1360. (2019)</li>
+            <li>Zhaoke Ning, Jinyong Yu, Tong Wang. "H∞/H- fault detection filter design for discrete-time stochastic systems with limited communication," <i>Transactions of the Institute of  Measurement and Control</i>, 41(13), 3808-3817. (2019)</li>
+            <li>Zhaoke Ning, Jinyong Yu, Hongyi Li, Yingnan Pan. "Adaptive Event-Triggered Fault  Detection for Fuzzy Stochastic Systems With Missing Measurements," <i>IEEE Transactions on Fuzzy Systems</i>, 26(4), 2201-2212. (2018)</li>
+            <li>Zhaoke Ning, Jinyong Yu, Tong Wang. "Simultaneous fault detection and control for uncertain discrete-time stochastic systems with limited communication," <i>Journal of the Franklin Institute</i>, 354, 7794-7811. (2017)</li>
+        </ol>
+        </details>
+
+        <!-- 会议论文 -->
+        <details>
+        <summary>会议论文 (Conference Papers)</summary>
+        <ol>
+            <li>加载中...</li>
+        </ol>
+        </details>
+
+        <!-- 科研项目 -->
+        <details>
+        <summary>科研项目 (Research Projects)</summary>
+
+        <table class="auto-counter">
+        <thead>
+            <tr>
+            <th>序号</th>
+            <th>起止年度</th>
+            <th>项目来源</th>
+            <th>项目名称</th>
+            <th>项目负责人</th>
+            <th>资助编号</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td class="counter"></td>
+            <td>2021.04-2022.04</td>
+            <td>北京航天测控技术有限公司横向项目</td>
+            <td>矢量四旋翼飞行器及其飞控系统研制</td>
+            <td>张凯</td>
+            <td>...</td>
+            </tr>
+            <tr>
+            <td class="counter"></td>
+            <td>2020/01-2022/12</td>
+            <td>国家自然科学基金青年基金项目</td>
+            <td>状态和输入受限下逼近翻滚目标的航天器相对姿轨鲁棒联合控制</td>
+            <td>张凯</td>
+            <td>61903312</td>
+            </tr>
+            <!-- 省略其余行，同上，只保留 <td class="counter"></td> 即可 -->
+        </tbody>
+        </table>
+
+        </details>
+    </main>
+</body>
+</html>
