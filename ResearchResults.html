@@ -29,6 +29,98 @@
             line-height: 1.5;
         }
 
+
+        /* =========================
+        Journal paper card style
+        ========================= */
+        .paper-list {
+            margin-top: 15px;
+        }
+
+        .paper-item {
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            gap: 12px;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .paper-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        /* 左侧序号 */
+        .paper-index {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2a5db0;
+            text-align: right;
+        }
+
+        /* 右侧内容 */
+        .paper-content h3 {
+            margin: 0 0 6px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .paper-content h3 a {
+            color: #0b3d91;
+            text-decoration: none;
+        }
+
+        .paper-content h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .paper-authors {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        /* 期刊徽章 */
+        .journal-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 13px;
+            border-radius: 14px;
+            color: #fff;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* 不同期刊可用不同颜色 */
+        .badge-ieee { background: #00629b; }
+        .badge-elsevier { background: #7a0019; }
+        .badge-springer { background: #013a8b; }
+
+        .paper-meta {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* 初始化计数器 */
+        .paper-list {
+            counter-reset: paperCounter;
+        }
+
+        /* 每个 paper-item 自动 +1 */
+        .paper-item {
+            counter-increment: paperCounter;
+        }
+
+        /* 在 paper-index 中自动显示序号 */
+        .paper-index::before {
+            content: counter(paperCounter) ".";
+        }
+
+
         
         /* 1. 给 this-table 重置计数器 */
         .auto-counter {
@@ -101,7 +193,7 @@
         <!-- 期刊论文 -->
         <details open>
         <summary>期刊论文 (Journal Papers)</summary>
-        <ol>
+        <!-- <ol>
             <li>B. Li, Y. Wang, Kai Zhang, G. R. Duan. "Constrained feedback control for spacecraft reorientation with an optimal gain," <i>IEEE Transactions on Aerospace and Electronic Systems</i>, 57(6): 3916-3926. (2021)</li>
             <li>S. Wang, L. Ma, B. Li, Kai Zhang. Architecture Design and Flight Control of a Novel Octopus Shaped Multirotor Vehicle. <i>IEEE Robotics and Automation Letters</i>, 7(1): 311-317. (2021)</li>
             <li>Kai Zhang, G. R. Duan. "Passivity-based adaptive tracking control of spacecraft line-of-sight relative motion with thrust saturation," <i>Journal of the Franklin Institute</i>, 358(13): 6408-6432. (2021)</li>
@@ -112,7 +204,232 @@
             <li>Zhaoke Ning, Jinyong Yu, Tong Wang. "H∞/H- fault detection filter design for discrete-time stochastic systems with limited communication," <i>Transactions of the Institute of  Measurement and Control</i>, 41(13), 3808-3817. (2019)</li>
             <li>Zhaoke Ning, Jinyong Yu, Hongyi Li, Yingnan Pan. "Adaptive Event-Triggered Fault  Detection for Fuzzy Stochastic Systems With Missing Measurements," <i>IEEE Transactions on Fuzzy Systems</i>, 26(4), 2201-2212. (2018)</li>
             <li>Zhaoke Ning, Jinyong Yu, Tong Wang. "Simultaneous fault detection and control for uncertain discrete-time stochastic systems with limited communication," <i>Journal of the Franklin Institute</i>, 354, 7794-7811. (2017)</li>
-        </ol>
+        </ol> -->
+
+        <div class="paper-list">
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11214347" target="_blank">
+                            State-of-Health Prediction for Lithium-Ion Batteries Based on SIREN–Transformer
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Zeyan Sun; Xudong Wang; Zhaoke Ning; Hanlin Dong; Yaonan Wang
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-ieee">
+                            IEEE Internet of Things Journal
+                        </span>
+                        15 December 2025, Volume: 12, Issue: 24
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0925231225010719" target="_blank">
+                            Neural network-based fully actuated trajectory tracking control for space manipulator with system uncertainties
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Jing Xu, Kai Zhang, Zhaoke Ning, Zhihua Chen
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Neurocomputing
+                        </span>
+                        8 September 2025, Volume 647,
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11121168" target="_blank">
+                            Ultralocal Model-Free Logarithmic Sliding-Mode Control for PMSM Angle Robust Tracking With Asymmetric Constraints
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Zheng Liu; Hanlin Dong; Qianbao Mi; Zhiqiang Ma; Zhaoke Ning; Xudong Wang
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-ieee">
+                            IEEE Transactions on Circuits and Systems I: Regular Papers
+                        </span>
+                        08 August 2025, Early Access
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11045124" target="_blank">
+                            Robust Joint Design of MIMO Radar Waveform and Filter via Structured Covariance Matrix
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Guohao Sun; Yingkui Zhang; Zhaoke Ning; Yuandong Ji; Zhiquan Ding
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-ieee">
+                            IEEE Signal Processing Letters
+                        </span>
+                        19 June 2025, Volume: 32
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0016003224001765" target="_blank">
+                            Zonotopic interval estimation for nonlinear systems with event-triggered protocols
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Xudong Wang, Guoqi Wang, Zhaoke Ning, Zhe Li, Yaonan Wang
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Journal of the Franklin Institute
+                        </span>
+                        May 2024, Volume 361, Issue 8
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0019057823005062" target="_blank">
+                            Nearly optimal fault-tolerant constrained tracking for multi-axis servo system via practical terminal sliding mode and adaptive dynamic programming
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Hanlin Dong, Zhaoke Ning, Zhiqiang Ma
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            ISA Transactions
+                        </span>
+                        January 2024, Volume 144, Pages 308-318
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.shcas.net/en/article/doi/10.3969/j.issn.1000-386x.2024.12.017" target="_blank">
+                            BEAMFORMING ALGORITHM FOR INTELLIGENT REFLECTING SURFACE ASSISTED SIMULTANEOUS WIRELESS INFORMATION AND POWER TRANSFER SYSTEM
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Cai Huanxi, Sun Guohao, Ning Zhaoke, Zhang Kai
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Computer Applications and Software
+                        </span>
+                        2024, 41(12): 116-122,130.
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0020025522010039" target="_blank">
+                            Dynamic event-triggered security control for networked control systems with cyber-attacks: A model predictive control approach
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Bin Li, Xinglian Zhou, Zhaoke Ning, Xiaoyi Guan, Ka-Fai Cedric Yiu
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Information Sciences
+                        </span>
+                        October 2022, Volume 612, Pages 384-398
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/cth2.12286" target="_blank">
+                            Adaptive dual model predictive control for linear systems with parametric uncertainties
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Mengting Lin, Zhaoke Ning, Bin Li, Kai Zhang
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            IET Control Theory & Applications
+                        </span>
+                        July 2022, Volume 16, Issue 11
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0016003222003611" target="_blank">
+                            Zonotopic fault detection for discrete-time systems with limited communication capability and sensor nonlinearity
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Zhen Zhang, Zhaoke Ning, Kai Zhang, Xiaona Song
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Journal of the Franklin Institute
+                        </span>
+                        July 2022, Volume 359, Issue 11, Pages 5733-5749
+                    </div>
+                </div>
+            </div>
+
+            <div class="paper-item">
+                <div class="paper-index"></div>
+                <div class="paper-content">
+                    <h3>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0020025522001529" target="_blank">
+                            Dynamic event-triggered security control and fault detection for nonlinear systems with quantization and deception attack
+                        </a>
+                    </h3>
+                    <div class="paper-authors">
+                        Zhaoke Ning, Tong Wang, Kai Zhang
+                    </div>
+                    <div class="paper-meta">
+                        <span class="journal-badge badge-elsevier">
+                            Information Sciences
+                        </span>
+                        May 2022, Volume 594, Pages 43-59
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
         </details>
 
         <!-- 会议论文 -->
